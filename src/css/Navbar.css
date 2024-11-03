@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+  width:100vw;
+    padding: 0 20px;
+    overflow: hidden;
+    text-align: center;
+}
+
+header {
+    width:100vw;
+    box-shadow: 0px 1px 5px black;
+    color: black;
+    padding: 10px 0;
+    background-color: #009498;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#logo span {
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+#logo {
+    margin-left: 15px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu {
+    font-size: 35px;
+    cursor: pointer;
+    display: none;
+    margin-left: 10rem;
+}
+
+a {
+    text-decoration-line: none;
+    text-transform: uppercase;
+    transition: 0.3s;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+.img {
+    mix-blend-mode: multiply;
+    width: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #009498;
+        padding: 20px;
+        box-shadow: 0px 1px 5px black;
+        animation: slideIn 0.3s forwards;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+    }
+}
